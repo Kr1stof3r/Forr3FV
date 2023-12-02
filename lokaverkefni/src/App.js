@@ -1,20 +1,15 @@
+import React from 'react';
+import Topbar from './topbar';
 
 
 function App() {
-
-  fetch('https://randomuser.me/api/')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
-
   return (
-    <h1>test</h1>
-
+    <div className="App">
+      <Topbar />
+      {/* Your other components/content goes here */}
+    </div>
   );
 }
+
 
 export default App;
