@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'; // If using axios
 import { ResponsiveChoropleth } from '@nivo/geo'
 
 // make sure parent container have a defined height when using
@@ -5,11 +7,45 @@ import { ResponsiveChoropleth } from '@nivo/geo'
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const MyResponsiveChoropleth = (data) => {
+
+const MyResponsiveChoropleth = () => {
+    const [data, setData] = useState(null);
+    const [features, setFeatures] = useState(null);
+
+
+    useEffect(() => {
+      // Fetch data using fetch or axios
+      axios.get('/data.json')
+        .then(response => {
+          setData(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+
+        axios.get('https://raw.githubusercontent.com/plouc/nivo/master/website/src/data/components/geo/world_countries.json')
+        .then( response => {
+            setFeatures(response.data);
+        }).catch(error => {
+            console.log('error fetching features', error)
+        });
+
+
+    }, []);
+
     console.log(data);
-    return ( <ResponsiveChoropleth
+    if (features && features.length > 0) {
+        console.log(features.features);
+
+    }
+
+
+    return ( 
+    <div style={{height: 800, width: 1200}}>
+        {data ? (
+    <ResponsiveChoropleth
         data={data}
-        features="/* please have a look at the description for usage */"
+        features={features.features}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         colors="nivo"
         domain={[ 0, 1000000 ]}
@@ -101,7 +137,10 @@ const MyResponsiveChoropleth = (data) => {
                 ]
             }
         ]}
-    />);
+    /> ) : (<p>Loading data...</p>
+    )}
+    </div>
+    );
 }
 
 export default MyResponsiveChoropleth;
