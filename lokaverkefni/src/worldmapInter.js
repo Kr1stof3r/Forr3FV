@@ -6,7 +6,7 @@ import "./style/FlexTile.css"
 
 
 
-const MyResponsiveChoropleth = (isPopupOpen) => {
+const MyResponsiveChoroplethInter = (isPopupOpen) => {
   const [features, setFeatures] = useState(null);
   const [projectionScale, setProjectionScale] = useState(100);
   const [real, setReal] = useState(null);
@@ -85,7 +85,7 @@ const MyResponsiveChoropleth = (isPopupOpen) => {
           projectionTranslation={[0.5, 0.5]}
           projectionRotation={[0, 0, 0]}
           enableGraticule={true}
-          isInteractive={false}
+          isInteractive={true}
           graticuleLineColor="#dddddd"
           borderWidth={0.5}
           borderColor="#152538"
@@ -102,4 +102,4 @@ const MyResponsiveChoropleth = (isPopupOpen) => {
   );
 };
 
-export default MyResponsiveChoropleth;
+export default MyResponsiveChoroplethInter;

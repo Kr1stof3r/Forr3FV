@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style/FlexTile.css'; // Import your CSS for styling
 
-const FlexTile = ({ title, children }) => {
+const FlexTile = ({ title, children, children2 }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const togglePopup = () => {
@@ -18,7 +18,8 @@ const FlexTile = ({ title, children }) => {
                 <div className="popup">
                     <button className="close-btn" onClick={togglePopup}>Close</button>
                     <h2>{title}</h2>
-                    {children}
+                        {children2}
+
                 </div>
             )}
         </div>

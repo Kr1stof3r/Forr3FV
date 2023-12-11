@@ -5,13 +5,15 @@
     padding: 10px;
     margin: 0;
     cursor: pointer;
-    width: 45%;
+    width: 45%; 
 
 }
 
 .tile-content {
     height: 300px;
+    transform-origin: top left;
 }
+
 
 .popup {
     position: fixed;
@@ -22,10 +24,19 @@
     background-color: white;
     padding: 20px;
     z-index: 1000;
-    width: 80%; /* or a specific width */
-    height: 90%;
+    width: 80%;
+    height: 80%;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
+.popup > div {
+    height: 700px
+
+
+}
+.popup > h2 {
+    margin-bottom: 0;}
+
 .close-btn {
     background-color: red;
     color: white;

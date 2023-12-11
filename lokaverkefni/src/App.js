@@ -1,6 +1,7 @@
 import React from 'react';
 import Topbar from './topbar';
 import MyResponsiveChoropleth from './worldmap';
+import MyResponsiveChoroplethInter from './worldmapInter';
 import FlexTile from './Tile';
 import "./style/app.css";
 
@@ -19,8 +20,7 @@ function App() {
     <div className="App">
       <Topbar />
       <div className="tileContainer">
-      <FlexTile title="Tile 1"><MyResponsiveChoropleth/></FlexTile>
-      <FlexTile title="Tile 1"><MyResponsiveChoropleth/></FlexTile>
+      <FlexTile title="Tile 1" children={<MyResponsiveChoropleth/>} children2={<MyResponsiveChoroplethInter/>}></FlexTile>
       </div>
       {/* <MyResponsiveChoropleth/> */}
       

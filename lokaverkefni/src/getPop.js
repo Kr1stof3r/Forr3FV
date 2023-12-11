@@ -18,8 +18,17 @@ async function getPop(ids) {
         listi.push(...response.data.data);
       }
 
-    console.log("listi", listi);
-    return listi;
+    // console.log("listi", listi);
+
+    let skil = [];
+    for (let item of listi) {
+        let obje = {};
+        obje.id = item.iso3;
+        obje.value = item.value;
+        skil.push(obje);
+    }
+
+    return skil;
 }
 
 export default getPop;
