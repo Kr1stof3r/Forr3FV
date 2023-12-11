@@ -21,14 +21,17 @@ async function getPop(ids) {
     // console.log("listi", listi);
 
     let skil = [];
+    let keypar = {}
     for (let item of listi) {
         let obje = {};
         obje.id = item.iso3;
         obje.value = item.value;
+        keypar[item.iso3] = item.locationId;
         skil.push(obje);
     }
 
-    return skil;
+
+    return {skil: skil, keypar: keypar};
 }
 
 export default getPop;

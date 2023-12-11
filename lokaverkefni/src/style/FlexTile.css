@@ -22,7 +22,7 @@
     transform: translate(-50%, -50%);
     border: 1px solid #000;
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     z-index: 1000;
     width: 80%;
     height: 80%;
@@ -37,12 +37,24 @@
 .popup > h2 {
     margin-bottom: 0;}
 
+/* .close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 10px;
+} */
+
 .close-btn {
     background-color: red;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    float: right; /* if you want it to the right */
-    margin-bottom: 10px;
+    position: absolute; /* Change from "relative" to "absolute" */
+    top: 0; /* Align to the top edge of the parent */
+    right: 0; /* Align to the right edge of the parent */
+    margin: 10px; /* Add margin for spacing */
 }

@@ -6,7 +6,7 @@ import "./style/FlexTile.css"
 
 
 
-const MyResponsiveChoropleth = (isPopupOpen) => {
+const MyResponsiveChoropleth = () => {
   const [features, setFeatures] = useState(null);
   const [projectionScale, setProjectionScale] = useState(100);
   const [real, setReal] = useState(null);
@@ -15,36 +15,17 @@ const MyResponsiveChoropleth = (isPopupOpen) => {
   const [popupContent, setPopupContent] = useState(null);
 
 
-  const fetchDataAndChoroplethData = async () => {
-    try {
-        const testData = await axios.get("/data.json");
-        const testGogn = testData.data;
-        // console.log("data.json", testData.data);
-    } catch (error) {
-        console.error("Error fetching data", error);
-    }
-  };
-
-
-  const getFeatures = async () => {
-
-    const ChoroplethgognResponse = await axios.get(
-        "https://raw.githubusercontent.com/plouc/nivo/master/website/src/data/components/geo/world_countries.json"
-      );
-      const Choroplethgogn = ChoroplethgognResponse.data;
-      setFeatures(Choroplethgogn);
-
-  }
-
-  const handleMapClick = (event) => {
-    // Handle the click event here
-    // You can customize the popup content based on the feature or event data
-    const popupText = `You clicked on ${event.id}`;
-    setPopupContent(popupText);
-  };
-
   useEffect(() => {
-    fetchDataAndChoroplethData();
+    const getFeatures = async () => {
+
+      const ChoroplethgognResponse = await axios.get(
+          "https://raw.githubusercontent.com/plouc/nivo/master/website/src/data/components/geo/world_countries.json"
+        );
+        const Choroplethgogn = ChoroplethgognResponse.data;
+        setFeatures(Choroplethgogn);
+  
+    }
+  
     getFeatures();
     getPop(ids).then((popData) => {
         setReal(popData);})
@@ -52,8 +33,9 @@ const MyResponsiveChoropleth = (isPopupOpen) => {
 
   useEffect(() => {
     if (geo.current) {
-      setProjectionScale(geo.current.clientWidth*geo.current.clientHeight / 5000);
+      setProjectionScale(geo.current.clientWidth*geo.current.clientHeight / 5000); 
       console.log("proj", geo.current.clientWidth / 7)
+      
     }
   }, [geo.current]);
 
@@ -72,8 +54,7 @@ const MyResponsiveChoropleth = (isPopupOpen) => {
     features && real ? (
         <div style={{ height: '100%', width: '100%'}} ref={geo}>
         <ResponsiveChoropleth
-          onClick={(event) => handleMapClick(event)}
-          data={real} //pop is test real is correct
+          data={real.skil} //pop is test real is correct
           features={features.features}
           margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
           colors="nivo"
