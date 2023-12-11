@@ -1,6 +1,9 @@
 import React from 'react';
 import Topbar from './topbar';
 import MyResponsiveChoropleth from './worldmap';
+import FlexTile from './Tile';
+import "./style/app.css";
+
 
 
 fetch('/data.json')
@@ -15,7 +18,11 @@ function App() {
   return (
     <div className="App">
       <Topbar />
-      <MyResponsiveChoropleth/>
+      <div className="tileContainer">
+      <FlexTile title="Tile 1"><MyResponsiveChoropleth/></FlexTile>
+      <FlexTile title="Tile 1"><MyResponsiveChoropleth/></FlexTile>
+      </div>
+      {/* <MyResponsiveChoropleth/> */}
       
       
       {/* Your other components/content goes here */}
