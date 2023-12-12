@@ -73,6 +73,10 @@ const PoplineGraph = (locadionId) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
+        legend: 'Years',
+        legendOffset: 36,
+        legendPosition: 'middle'
+        
 
       }}
       axisLeft={{
@@ -80,7 +84,9 @@ const PoplineGraph = (locadionId) => {
         format:".4s",
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count",
+        legend: "Population",
+        legendOffset: -55,
+        legendPosition: 'middle'
 
       }}
       pointSize={5}
