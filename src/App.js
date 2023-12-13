@@ -5,16 +5,6 @@ import MyResponsiveChoroplethInter from './worldmapInter';
 import FlexTile from './Tile';
 import "./style/app.css";
 
-
-
-fetch('/data.json')
-.then(response => response.json()).then(data2 => {
-    console.log(data2);
-})
-
-
-
-
 function App() {
   return (
     <div className="App">
