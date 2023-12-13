@@ -7,9 +7,7 @@ const Topbar = () => {
       <div className="logo">Data backend</div>
       <div className="menu">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li href="%PUBLIC_URL%/README.md">Skýrsla</li>
         </ul>
       </div>
     </div>
