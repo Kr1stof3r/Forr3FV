@@ -15,8 +15,15 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    padding-right: 30px;
   }
   
   .menu li {
-    cursor: pointer;
+    cursor: pointer;    
+    padding: 5px
+
+  }
+
+  .menu li:hover {
+    background-color: #595959;
   }
