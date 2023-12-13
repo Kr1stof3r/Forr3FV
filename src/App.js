@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Topbar />
       <div className="tileContainer">
-      <FlexTile title="Tile 1" children={<MyResponsiveChoropleth/>} children2={<MyResponsiveChoroplethInter/>}></FlexTile>
+      <FlexTile title="Population" children={<MyResponsiveChoropleth/>} children2={<MyResponsiveChoroplethInter/>}></FlexTile>
       </div>
       {/* <MyResponsiveChoropleth/> */}
       
