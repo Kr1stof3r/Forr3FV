@@ -4,7 +4,7 @@ import MyResponsiveChoropleth from './worldmap';
 import MyResponsiveChoroplethInter from './worldmapInter';
 import FlexTile from './Tile';
 import ReactMarkdown from 'react-markdown';
-import readmeContent from './README.md';
+import readmeContent from './static/README.md';
 import "./style/app.css";
 
 function App() {
