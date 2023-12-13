@@ -7,13 +7,15 @@ import ReactMarkdown from 'react-markdown';
 import readmeContent from './static/README.md';
 import "./style/app.css";
 
-const [showReadme, setShowReadme] = useState(false);
 
-const handleSkýrslaClick = () => {
-  setShowReadme(true);
-};
 
 function App() {
+  const [showReadme, setShowReadme] = useState(false);
+
+  const handleSkýrslaClick = () => {
+    setShowReadme(true);
+  };
+  
   return (
     <div className="App">
       <Topbar onSkýrslaClick={handleSkýrslaClick}/>
