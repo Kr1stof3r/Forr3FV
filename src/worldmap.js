@@ -33,12 +33,12 @@ const MyResponsiveChoropleth = () => {
 
 
   if (features && features.features) {
-    console.log("features", features.features);
+    // console.log("features", features.features);
   }
 
 
  if (real) {
-    console.log("real", real);
+    // console.log("real", real);
  }
 
 

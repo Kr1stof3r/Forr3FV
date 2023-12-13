@@ -4,7 +4,7 @@ import { ResponsiveLine } from "@nivo/line";
 
 const PoplineGraph = (locadionId) => {
   const [data, setData] = useState(null);
-    console.log("locid", locadionId);
+    // console.log("locid", locadionId);
   useEffect(() => {
     const fetchdata = async () => {
 
@@ -12,7 +12,7 @@ const PoplineGraph = (locadionId) => {
 
       const url = "https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear=2023&variants=4&sexes=3&pagingInHeader=false&format=json&pageSize=100"
       const initialResponse = await axios.get(url);
-      console.log(initialResponse);
+      // console.log(initialResponse);
       const listi = [...initialResponse.data.data];
       const pages = initialResponse.data.pages;
 
@@ -20,17 +20,17 @@ const PoplineGraph = (locadionId) => {
 
       for (let i = 2; i <= pages; i++) {
         const url ="https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear=2023&variants=4&sexes=3&pageNumber="+i+"&pagingInHeader=false&format=json&pageNumber=2&pageSize=100"
-        console.log("url", url);
+        // console.log("url", url);
         promises.push(axios.get(url));
       }
 
       const results = await Promise.all(promises);
-      console.log(results);
+      // console.log(results);
       for (const response of results) {
         listi.push(...response.data.data);
       }
 
-      console.log(listi);
+      // console.log(listi);
       let objec = {}
       objec.id = locadionId.locadionId.title;
       objec.color = locadionId.locadionId.color;
@@ -41,14 +41,14 @@ const PoplineGraph = (locadionId) => {
         subobj.y = item.value
         objec.data.push(subobj);
       }
-      console.log(objec);
+      // console.log(objec);
       setData([objec]);
     };
 
     fetchdata();
   }, [locadionId.locadionId.title, locadionId.locadionId.color, locadionId.locadionId.locId]);
 
-  console.log("id", locadionId);
+  // console.log("id", locadionId);
   return data ? (
     <ResponsiveLine
       data={data}

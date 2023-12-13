@@ -19,9 +19,17 @@ const MyResponsiveChoroplethInter = () => {
     // Handle the click event here
     // You can customize the popup content based on the feature or event data
     console.log(event);
+    
     const popupText = {locId: real.keypar[event.id], title: event.label, color: event.color};
-    setPopupContent(popupText);
-    setPopupTogel(true);
+    if (popupText.locId) {
+      setPopupContent(popupText);
+      setPopupTogel(true);
+    } else {
+      return;
+    }
+
+
+
   };
 
   useEffect(() => {
@@ -43,11 +51,11 @@ const MyResponsiveChoroplethInter = () => {
 
 
   if (features && features.features) {
-    console.log("features", features.features);
+    // console.log("features", features.features);
   }
 
   if (real) {
-    console.log("real", real);
+    // console.log("real", real);
   }
 
   return features && real ? (
