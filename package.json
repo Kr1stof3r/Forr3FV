@@ -3,6 +3,7 @@
   "name": "lokaverkefni",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@nivo/bar": "^0.84.0",
     "@nivo/core": "^0.84.0",
