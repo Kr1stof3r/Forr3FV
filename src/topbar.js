@@ -1,13 +1,13 @@
 import React from 'react';
 import './style/topbar.css';
 
-const Topbar = () => {
+const Topbar = ({ onSkýrslaClick }) => {
   return (
     <div className="topbar">
       <div className="logo">Data backend</div>
       <div className="menu">
         <ul>
-          <li href="%PUBLIC_URL%/README.md">Skýrsla</li>
+          <li onClick={onSkýrslaClick}>Skýrsla</li>
         </ul>
       </div>
     </div>
