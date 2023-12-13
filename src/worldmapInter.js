@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import {
-  Choropleth,
-  ResponsiveChoropleth,
-  ResponsiveChoroplethCanvas,
+  ResponsiveChoropleth
 } from "@nivo/geo";
 import getPop from "./getPop";
 import "./style/FlexTile.css";
@@ -52,7 +50,7 @@ const MyResponsiveChoroplethInter = () => {
       );
       console.log("proj", geo.current.clientWidth / 7);
     }
-  }, [geo.current]);
+  });
 
   if (features && features.features) {
     console.log("features", features.features);
