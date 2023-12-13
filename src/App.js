@@ -7,6 +7,12 @@ import ReactMarkdown from 'react-markdown';
 import readmeContent from './static/README.md';
 import "./style/app.css";
 
+const [showReadme, setShowReadme] = useState(false);
+
+const handleSkýrslaClick = () => {
+  setShowReadme(true);
+};
+
 function App() {
   return (
     <div className="App">
