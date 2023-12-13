@@ -50,7 +50,7 @@ const MyResponsiveChoroplethInter = () => {
       );
       console.log("proj", geo.current.clientWidth / 7);
     }
-  }, []);
+  }, [geo.current]);
 
   if (features && features.features) {
     console.log("features", features.features);
