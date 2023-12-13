@@ -16,7 +16,7 @@ const handleSkýrslaClick = () => {
 function App() {
   return (
     <div className="App">
-      <Topbar />
+      <Topbar onSkýrslaClick={handleSkýrslaClick}/>
       <div className="tileContainer">
       <FlexTile title="Population" children={<MyResponsiveChoropleth/>} children2={<MyResponsiveChoroplethInter/>}></FlexTile>
       </div>
