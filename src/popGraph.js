@@ -46,7 +46,7 @@ const PoplineGraph = (locadionId) => {
     };
 
     fetchdata();
-  }, []);
+  }, [locadionId.locadionId.title, locadionId.locadionId.color, locadionId.locadionId.locId]);
 
   console.log("id", locadionId);
   return data ? (

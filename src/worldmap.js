@@ -37,7 +37,7 @@ const MyResponsiveChoropleth = () => {
       console.log("proj", geo.current.clientWidth / 7)
       
     }
-  });
+  }, []);
 
 
   if (features && features.features) {
