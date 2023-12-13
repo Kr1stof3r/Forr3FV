@@ -15,7 +15,7 @@ Endaði á að hafa bara Eitt tile fyrir mannsfjölda sem sínir kort, þegar þ
 
 ### Video
 
-[![Lokaverkefni Viðm](https://i9.ytimg.com/vi/7-u4kUbt6q8/mq2.jpg?sqp=CKSe56sG-oaymwEmCMACELQB8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLBzgYZ_5fnYgoBfm4-RWucXPWKCfw)](https://youtu.be/7-u4kUbt6q8 "Lokaverkefni Viðm")
+[![Lokaverkefni Viðm](https://github.com/Kr1stof3r/Forr3FV/blob/main/public/thumbnail.jpg?raw=true)](https://youtu.be/7-u4kUbt6q8 "Lokaverkefni Viðm")
 
 ### Kóðin
 
