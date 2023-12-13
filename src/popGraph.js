@@ -9,8 +9,8 @@ const PoplineGraph = (locadionId) => {
     const fetchdata = async () => {
 
 
-
-      const url = "https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear=2023&variants=4&sexes=3&pagingInHeader=false&format=json&pageSize=100"
+      const currentYear = new Date().getFullYear();
+      const url = "https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear="+currentYear+"&variants=4&sexes=3&pagingInHeader=false&format=json&pageSize=100"
       const initialResponse = await axios.get(url);
       // console.log(initialResponse);
       const listi = [...initialResponse.data.data];
@@ -19,7 +19,7 @@ const PoplineGraph = (locadionId) => {
       const promises = [];
 
       for (let i = 2; i <= pages; i++) {
-        const url ="https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear=2023&variants=4&sexes=3&pageNumber="+i+"&pagingInHeader=false&format=json&pageNumber=2&pageSize=100"
+        const url ="https://population.un.org/dataportalapi/api/v1/data/indicators/49/locations/"+locadionId.locadionId.locId+"?endYear="+currentYear+"&variants=4&sexes=3&pageNumber="+i+"&pagingInHeader=false&format=json&pageNumber=2&pageSize=100"
         // console.log("url", url);
         promises.push(axios.get(url));
       }
